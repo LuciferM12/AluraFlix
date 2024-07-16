@@ -1,13 +1,13 @@
-import Header from "./components/Header"
+import GlobalStyles from "./components/GlobalStyles"
+import Header from "./components/Cabecera"
 
 
 function App() {
 
   return (
     <>
-      <Header>
-        
-      </Header>
+      <GlobalStyles/>
+        <Header/>
     </>
   )
 }
