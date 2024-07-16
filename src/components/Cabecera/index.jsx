@@ -3,13 +3,14 @@ import Boton from "../Boton";
 const HeaderEstilizado = styled.header`
     display: flex;
     justify-content: space-between;
-    background-color: #192744;
+    background-color: #0D0D0D;
     width: 100%;
-    height: 50px;
+    height: 70px;
     align-items: center;
     padding: 0 60px;
-    color: #91CFFB;
+    color: #D9C39A;
     box-sizing: border-box;
+    font-family: "Playwrite HR Lijeva", cursive;
 `
 
 const Cabecera = () => {

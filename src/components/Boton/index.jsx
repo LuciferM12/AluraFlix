@@ -3,16 +3,16 @@ import styled from "styled-components";
 const BotonEstilizado = styled.input`
     margin-left: 12px;
     border-radius: 5px;
-    background-color: #D31775;
+    background-color: transparent;
     color: white;
     font-weight: 500;
-    border: none;
+    border: solid white 1px;
     padding: 5px;
-    width: 100px;
+    min-width: 100px;
     cursor: pointer;
     transition: .3s ease-in;
     &:hover{
-        background-color:#82266F ;
+        background-color:#8C443E ;
     }
 
 `

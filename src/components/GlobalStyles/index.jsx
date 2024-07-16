@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyles= createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 
 
 html {
@@ -16,7 +16,7 @@ html {
   }
   h1 {
     font-size: 2em;
-    margin: 0.67em 0;
+    margin: 0;
   }
   hr {
     box-sizing: content-box; 
