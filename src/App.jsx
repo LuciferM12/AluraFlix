@@ -1,13 +1,10 @@
-import GlobalStyles from "./components/GlobalStyles"
-import Header from "./components/Cabecera"
-
+import AppRoutes from "./routes.jsx"
 
 function App() {
 
   return (
     <>
-      <GlobalStyles/>
-        <Header/>
+      <AppRoutes/>
     </>
   )
 }
