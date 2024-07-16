@@ -77,7 +77,7 @@ const Botones = styled.button`
     }
 `
 
-const Card = ({ titulo, duracion, imagen, eliminarPelicula, id }) => {
+const Card = ({ titulo, duracion, imagen, eliminarPelicula, id, abrirModal }) => {
     return (
         <CartaEstilizada>
             <ImagenEstilizada src={imagen} alt={titulo} />
@@ -92,7 +92,7 @@ const Card = ({ titulo, duracion, imagen, eliminarPelicula, id }) => {
                 <Botones onClick={() => eliminarPelicula(id)}>
                     <MdDeleteForever />Eliminar
                 </Botones>
-                <Botones>
+                <Botones onClick={() => abrirModal(id)}>
                     <FaEdit />Editar
                 </Botones>
             </Barra>

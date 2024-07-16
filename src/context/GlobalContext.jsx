@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 export const GlobalContext = createContext();
 
 
-const  GlobalContextProvider = ({ children }) =>{
+const GlobalContextProvider = ({ children }) => {
     const [peliculas, setPeliculas] = useState([]);
     const categoriasUnicas = ["Animación", "Superhéroes", "Drama", "Romance"];
     //Formulario agregar
@@ -11,7 +11,9 @@ const  GlobalContextProvider = ({ children }) =>{
     const [imagen, setImagen] = useState("");
     const [horas, setHoras] = useState(0);
     const [minutos, setMinutos] = useState(0);
-    const [categoria, setCategoria] = useState(""); 
+    const [categoria, setCategoria] = useState("");
+    const [abierto, setAbierto] = useState(false);
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -27,16 +29,34 @@ const  GlobalContextProvider = ({ children }) =>{
         setPeliculas(nuevasPeliculas)
     }
 
-    const agregarPelicula = (pelicula) =>{
+    const abrirModal = (id) => {
+        const pelicula = peliculas.filter((pelicula) => pelicula.id === id)
+        console.log(pelicula[0].categoria);
+        setTitulo(pelicula[0].titulo)
+        setImagen(pelicula[0].imagen)
+        setCategoria(pelicula[0].categoria)
+        setAbierto(true)
+    }
+
+    const limpiarEstado = () => {
+        setTitulo("")
+        setImagen("")
+        setHoras(0)
+        setMinutos(0)
+        setCategoria("")
+    }
+
+    const agregarPelicula = (pelicula) => {
         setPeliculas([...peliculas, pelicula])
+        limpiarEstado()
         navigate('/');
     }
-    
+
     return (
         <GlobalContext.Provider value={{
-            peliculas, 
-            setPeliculas, 
-            eliminarPelicula, 
+            peliculas,
+            setPeliculas,
+            eliminarPelicula,
             categoriasUnicas,
             titulo,
             setTitulo,
@@ -48,7 +68,11 @@ const  GlobalContextProvider = ({ children }) =>{
             minutos,
             setCategoria,
             categoria,
-            agregarPelicula
+            agregarPelicula,
+            abrirModal,
+            setAbierto,
+            abierto,
+            limpiarEstado
         }}>
             {children}
         </GlobalContext.Provider>

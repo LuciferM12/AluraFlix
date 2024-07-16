@@ -25,15 +25,15 @@ const FieldsetEstilizado = styled.fieldset`
     gap: 10px;
 `
 
-const CampoTexto = ({ placeholder, tipo, required, titulo, estado }) => {
-    
+const CampoTexto = ({ placeholder, tipo, required, titulo, estado, value }) => {
+
     const manejarCambio = (e) => {
         estado(e.target.value)
     }
     return (
         <FieldsetEstilizado >
             <span>{titulo}: </span>
-            <CampoTextoEstilizado placeholder={placeholder} type={tipo = "text"} required={required} onChange={manejarCambio} />
+            <CampoTextoEstilizado value={value} placeholder={placeholder} type={tipo = "text"} required={required} onChange={manejarCambio} />
         </FieldsetEstilizado>
     )
 }

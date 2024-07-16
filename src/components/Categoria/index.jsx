@@ -29,7 +29,7 @@ const TituloCategoria = styled.div`
     -moz-box-shadow: -11px 12px 55px -2px rgba(0,0,0,0.75);
 `
 
-const Categoria = ({ peliculas, categoria, eliminarPelicula }) => {
+const Categoria = ({ peliculas, categoria, eliminarPelicula, abrirModal }) => {
     return (
         <>
             <CategoriaEstilizada>
@@ -40,7 +40,7 @@ const Categoria = ({ peliculas, categoria, eliminarPelicula }) => {
                 </Titulo>
                 {
                     peliculas.map((pelicula) => {
-                        return <Card {...pelicula} key={pelicula.id} eliminarPelicula={eliminarPelicula} />;
+                        return <Card {...pelicula} key={pelicula.id} eliminarPelicula={eliminarPelicula} abrirModal={abrirModal}/>;
                     })
                 }
             </CategoriaEstilizada>

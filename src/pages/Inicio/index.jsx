@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Categoria from '../../components/Categoria'
 import { GlobalContext } from '../../context/GlobalContext'
 import { useContext } from 'react'
+import ModalZoom from '../../components/ModalZoom'
 
 
 const FondoEstilizado = styled.section`
@@ -12,7 +13,7 @@ const FondoEstilizado = styled.section`
 `
 
 const Inicio = () => {
-    const {peliculas, categoriasUnicas, eliminarPelicula} = useContext(GlobalContext);
+    const {peliculas, categoriasUnicas, eliminarPelicula, abrirModal} = useContext(GlobalContext);
     return (
         <>
             <Banner backgroundImage={Cine} />
@@ -20,12 +21,12 @@ const Inicio = () => {
                 categoriasUnicas.map((categoria, index) => {
                     const peliCat = peliculas.filter(pelicula => pelicula.categoria === categoria)
                     return (
-                        peliCat.length > 0 && <Categoria peliculas={peliCat} categoria={categoria} key={index} eliminarPelicula={eliminarPelicula} />
+                        peliCat.length > 0 && <Categoria peliculas={peliCat} categoria={categoria} key={index} eliminarPelicula={eliminarPelicula} abrirModal={abrirModal}/>
                     )
                 })
             }
-            <FondoEstilizado>
-            </FondoEstilizado>
+            <FondoEstilizado/>
+            <ModalZoom/>
         </>
     );
 

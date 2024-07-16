@@ -31,7 +31,7 @@ const OptionEstilizada = styled.option`
     background-color: #0D0D0D;
 `
 
-const Seleccion = ({ titulo, estado }) => {
+const Seleccion = ({ titulo, estado, value ="" }) => {
     const { categoriasUnicas } = useContext(GlobalContext);
     const manejarCambio = (e) =>{
         estado(e.target.value);
@@ -39,7 +39,7 @@ const Seleccion = ({ titulo, estado }) => {
     return (
         <FieldsetEstilizado>
             <span>{titulo}: </span>
-            <ListaOpcionesEstilizada required defaultValue={""} onChange={manejarCambio}>
+            <ListaOpcionesEstilizada required defaultValue={value} onChange={manejarCambio}>
                 <OptionEstilizada value="" disabled hidden>Seleccionar categoria</OptionEstilizada>
                 {
                     categoriasUnicas.map((categoria, index) => {
