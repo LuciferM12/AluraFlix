@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Boton from "../Boton";
+import { Link } from "react-router-dom";
+
 const HeaderEstilizado = styled.header`
     display: flex;
     justify-content: space-between;
@@ -14,14 +16,19 @@ const HeaderEstilizado = styled.header`
     position: sticky;
     z-index: 1;
     top: 0;
+    a {
+    text-decoration: none;
+    color: inherit;
+  }
+
 `
 
 const Cabecera = () => {
     return <HeaderEstilizado>
-        <h1>AluraFlix</h1>
+        <Link to={"/"}><h1>AluraFlix</h1></Link>
         <div>
-            <Boton titulo="Home" />
-            <Boton titulo="Nuevo Video" />
+            <Link to={"/"}><Boton tipo={"button"} texto={"Home"} /></Link>
+            <Link to={"/registro"}><Boton tipo={"button"} texto={"Nuevo Video"} /></Link>
         </div>
 
     </HeaderEstilizado>

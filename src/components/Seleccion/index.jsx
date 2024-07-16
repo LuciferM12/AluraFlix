@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { GlobalContext } from "../../context/GlobalContext";
 
 const ListaOpcionesEstilizada = styled.select`
     background-color: transparent;
@@ -13,7 +15,7 @@ const ListaOpcionesEstilizada = styled.select`
     
     &:focus {
         border: 1px solid #D9C39A; /* Ajusta el borde al enfocarse */
-        box-shadow: 0 0 5px black; /* Añade una sombra roja al enfocarse */
+        box-shadow: 0 0 5px black; 
     }
 `
 
@@ -25,11 +27,23 @@ const FieldsetEstilizado = styled.fieldset`
     gap: 10px;
 `
 
+const OptionEstilizada = styled.option`
+    background-color: #0D0D0D;
+`
+
 const Seleccion = ({ titulo }) => {
+    const { categoriasUnicas } = useContext(GlobalContext);
     return (
         <FieldsetEstilizado>
             <span>{titulo}: </span>
-            <ListaOpcionesEstilizada></ListaOpcionesEstilizada>
+            <ListaOpcionesEstilizada required defaultValue={""}>
+                <OptionEstilizada value="" disabled hidden>Seleccionar categoria</OptionEstilizada>
+                {
+                    categoriasUnicas.map((categoria, index) => {
+                        return <OptionEstilizada key={index} value={categoria}>{categoria}</OptionEstilizada>
+                    })
+                }
+            </ListaOpcionesEstilizada>
         </FieldsetEstilizado>
     )
 }

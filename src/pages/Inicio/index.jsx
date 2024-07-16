@@ -2,7 +2,8 @@ import Cine from './cine.jpg'
 import Banner from '../../components/Banner'
 import styled from 'styled-components'
 import Categoria from '../../components/Categoria'
-import { useEffect, useState } from 'react'
+import { GlobalContext } from '../../context/GlobalContext'
+import { useContext } from 'react'
 
 
 const FondoEstilizado = styled.section`
@@ -11,23 +12,7 @@ const FondoEstilizado = styled.section`
 `
 
 const Inicio = () => {
-    const [peliculas, setPeliculas] = useState([]);
-    const categoriasUnicas = ["Animación", "Superhéroes", "Drama"];
-
-    useEffect(() => {
-        fetch("https://my-json-server.typicode.com/LuciferM12/aluraflix-api/peliculas")
-            .then((response) => response.json())
-            .then((data) => {
-                setPeliculas(data);
-            });
-    }, []);
-
-    const eliminarPelicula = (id) => {
-        const nuevasPeliculas = peliculas.filter((pelicula) => pelicula.id != id)
-        setPeliculas(nuevasPeliculas)
-    }
-
-
+    const {peliculas, categoriasUnicas, eliminarPelicula} = useContext(GlobalContext);
     return (
         <>
             <Banner backgroundImage={Cine} />
