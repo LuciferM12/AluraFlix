@@ -1,15 +1,14 @@
 import GlobalStyles from '../../components/GlobalStyles'
 import Header from '../../components/Cabecera'
-import Banner from '../../components/Banner';
-import Cine from './cine.jpg'
 import Footer from '../../components/Footer';
+import { Outlet } from 'react-router-dom';
 
 function PaginaBase() {
   return (
     <main>
       <GlobalStyles />
       <Header />
-      <Banner backgroundImage={Cine} />
+      <Outlet/>
       <Footer />
     </main>
   )
