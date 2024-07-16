@@ -1,0 +1,81 @@
+{
+    "peliculas":[
+        {
+            "id": 1,
+            "titulo": "Mi villano favorito 4",
+            "imagen": "https://www.lahiguera.net/cinemania/pelicula/11073/gru_4_mi_villano_favorito-cartel-11857.jpg",
+            "duracion": "1h 35min",
+            "categoria": "Animación"
+        },
+        {
+           "id": 2,
+            "titulo": "Intensamente 2",
+            "imagen": "https://cl2.buscafs.com/www.tomatazos.com/public/uploads/images/441716/441716_600x780.jpg",
+            "duracion": "1h 36min",
+            "categoria": "Animación" 
+        },
+        {
+            "id": 3,
+            "titulo": "Spider-Man: Cruzando el multiverso",
+            "imagen": "https://moviepostermexico.com/cdn/shop/files/spiderman_across_the_spiderverse_ver2_xxlg_1024x1024@2x.jpg?v=1686681028",
+            "duracion": "2h 20min",
+            "categoria": "Animación" 
+        },
+        {
+            "id": 4,
+            "titulo": "Rey León",
+            "imagen": "https://i.pinimg.com/originals/af/42/6d/af426df437acda0333fc53a806d5514f.jpg",
+            "duracion": "1h 28min",
+            "categoria": "Animación" 
+        },
+        {
+            "id": 5,
+            "titulo": "Super Mario Bros: La pelicula",
+            "imagen": "https://m.media-amazon.com/images/M/MV5BZDY2Y2ZhZjctN2ZkNC00NzU3LWI4OGEtMTlkMGNlOGExNTNiXkEyXkFqcGdeQXVyMTU3NDg0OTgx._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+            "duracion": "1h 32min",
+            "categoria": "Animación" 
+        },
+        {
+            "id": 6,
+            "titulo": "Moana",
+            "imagen": "https://es.web.img3.acsta.net/c_310_420/pictures/16/09/21/11/07/103296.jpg",
+            "duracion": "1h 47min",
+            "categoria": "Animación" 
+        },
+        {
+            "id": 7,
+            "titulo": "Avengers: Infinity War",
+            "imagen": "https://moviepostermexico.com/cdn/shop/products/w3XORYUDxH53iiuWRw6nqrZdwybBM0kI88F9ccHiDmw_1024x1024@2x.jpg?v=1619731898",
+            "duracion": "1h 36min",
+            "categoria": "Superhéroes" 
+        },
+        {
+            "id": 8,
+            "titulo": "Challengers",
+            "imagen": "https://moviepostermexico.com/cdn/shop/files/challengers_xlg_1024x1024@2x.jpg?v=1716504284",
+            "duracion": "2h 11min",
+            "categoria": "Drama" 
+        },
+        {
+            "id": 9,
+            "titulo": "Oppenhaimer",
+            "imagen": "https://moviepostermexico.com/cdn/shop/files/oppenheimer_ver3_xxlg_1024x1024@2x.jpg?v=1690337282",
+            "duracion": "3h 12min",
+            "categoria": "Drama" 
+        },
+        {
+            "id": 10,
+            "titulo": "Dune: Part Two",
+            "imagen": "https://moviepostermexico.com/cdn/shop/files/dune_part_two_xlg_1_1024x1024@2x.jpg?v=1710432254",
+            "duracion": "2h 46min",
+            "categoria": "Drama" 
+        },
+        {
+            "id": 11,
+            "titulo": "Wiplash",
+            "imagen": "https://moviepostermexico.com/cdn/shop/products/whiplash_1024x1024@2x.jpg?v=1598498330",
+            "duracion": "1h 46min",
+            "categoria": "Drama" 
+        }
+    ]
+}

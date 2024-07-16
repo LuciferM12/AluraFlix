@@ -69,15 +69,15 @@ const Botones = styled.button`
     }
 `
 
-const Card = () => {
+const Card = ({ titulo, duracion, imagen }) => {
     return (
         <CartaEstilizada>
-            <ImagenEstilizada src="https://www.lahiguera.net/cinemania/pelicula/11073/gru_4_mi_villano_favorito-cartel-11857.jpg" alt="Minions" />
+            <ImagenEstilizada src={imagen} alt={titulo} />
             <Informacion>
-                <p>Mi villano Favorito 4 </p>
+                <p>{titulo}</p>
                 <span style={{ display: 'flex', alignItems: 'center' }}>
                     <IoMdTime />
-                    <span>1hr</span>
+                    <span>{duracion}</span>
                 </span>
             </Informacion>
             <Barra>

@@ -27,18 +27,24 @@ const TituloCategoria = styled.div`
     -moz-box-shadow: -11px 12px 55px -2px rgba(0,0,0,0.75);
 `
 
-const Categoria = () => {
+const Categoria = ({ peliculas, categoria }) => {
     return (
-        <CategoriaEstilizada>
-            <Titulo>
-                <TituloCategoria>
-                    Animadas
-                </TituloCategoria>
-            </Titulo>
-            <Card />
+        <>
+            <CategoriaEstilizada>
+                <Titulo>
+                    <TituloCategoria>
+                        {categoria}
+                    </TituloCategoria>
+                </Titulo>
+                {
+                    peliculas.filter(pelicula => pelicula.categoria === categoria).map((pelicula) => {
+                        return <Card {...pelicula} key={pelicula.id} />;
+                    })
+                }
 
-            {/*<img src='https://www.lahiguera.net/cinemania/pelicula/11073/gru_4_mi_villano_favorito-cartel-11857.jpg' />*/}
-        </CategoriaEstilizada>
+                {/*<img src='https://www.lahiguera.net/cinemania/pelicula/11073/gru_4_mi_villano_favorito-cartel-11857.jpg' />*/}
+            </CategoriaEstilizada>
+        </>
     )
 
 }
