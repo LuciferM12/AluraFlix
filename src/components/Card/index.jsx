@@ -11,6 +11,10 @@ const CartaEstilizada = styled.div`
     background-color:#0D0D0D;
     border-radius: 10px;
     color: white;
+    transition: .2s ease-in;
+    &:hover{
+        transform: scale(.95);
+    }
  `
 
 const ImagenEstilizada = styled.img`
@@ -31,6 +35,7 @@ const Informacion = styled.div`
     gap: 20px;
     justify-content: center;
     p{
+        font-family: "Montserrat", sans-serif;
         display: block;
         gap: 5px;
         width: 90%;
@@ -40,6 +45,9 @@ const Informacion = styled.div`
         text-overflow: ellipsis;
         overflow: hidden;
         text-align: center;
+    }
+    span{
+        font-family: "Montserrat", sans-serif;
     }
 `
 
@@ -69,7 +77,7 @@ const Botones = styled.button`
     }
 `
 
-const Card = ({ titulo, duracion, imagen }) => {
+const Card = ({ titulo, duracion, imagen, eliminarPelicula, id }) => {
     return (
         <CartaEstilizada>
             <ImagenEstilizada src={imagen} alt={titulo} />
@@ -81,7 +89,7 @@ const Card = ({ titulo, duracion, imagen }) => {
                 </span>
             </Informacion>
             <Barra>
-                <Botones>
+                <Botones onClick={() => eliminarPelicula(id)}>
                     <MdDeleteForever />Eliminar
                 </Botones>
                 <Botones>
