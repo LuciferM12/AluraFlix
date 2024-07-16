@@ -78,11 +78,15 @@ const FormularioEstilizado = styled.form`
 `
 
 const ModalZoom = () => {
-    //const { estaAbiertoModal, fotoSeleccionada, cerrarModal } = useFotoModal();
-    const { setTitulo, titulo, setImagen, imagen, setCategoria, categoria, abierto, setAbierto, limpiarEstado } = useContext(GlobalContext);
+    const { setTitulo, titulo, setImagen, imagen, setCategoria, categoria, abierto, setAbierto, limpiarEstado, editarPelicula } = useContext(GlobalContext);
     const cerrarModal = () => {
         setAbierto(!abierto)
         limpiarEstado()
+    }
+
+    const manejarEnvio = (e) => {
+        e.preventDefault()
+        editarPelicula();
     }
 
     return <>
@@ -103,7 +107,7 @@ const ModalZoom = () => {
                     <CampoTexto titulo={"Imagen"} value={imagen} placeholder={"Ingrese el url de la imagen"} tipo={"url"} estado={setImagen} required />
                     <Seleccion titulo={"Categoria"} value={categoria} estado={setCategoria} />
                     <EspacioBotones>
-                        <Boton tipo={"submit"} ></Boton>
+                        <Boton tipo={"submit"} accion={manejarEnvio} ></Boton>
                         <Boton tipo={"button"} texto={"Limpiar"} accion={() => limpiarEstado()} ></Boton>
                     </EspacioBotones>
                 </FormularioEstilizado>

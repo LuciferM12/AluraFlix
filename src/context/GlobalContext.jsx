@@ -13,6 +13,7 @@ const GlobalContextProvider = ({ children }) => {
     const [minutos, setMinutos] = useState(0);
     const [categoria, setCategoria] = useState("");
     const [abierto, setAbierto] = useState(false);
+    const [peliculaAbierta, setPeliculaAbierta] = useState()
 
     const navigate = useNavigate();
 
@@ -36,6 +37,22 @@ const GlobalContextProvider = ({ children }) => {
         setImagen(pelicula[0].imagen)
         setCategoria(pelicula[0].categoria)
         setAbierto(true)
+        setPeliculaAbierta(id)
+    }
+
+    const editarPelicula = () => {
+        const nuevasPeliculas = peliculas.map((pelicula) =>
+            pelicula.id === peliculaAbierta ? {
+                ...pelicula,
+                titulo: titulo,
+                imagen: imagen,
+                categoria: categoria
+            } : pelicula
+        );
+        setPeliculas(nuevasPeliculas);
+        setAbierto(!abierto)
+        limpiarEstado();
+        setPeliculaAbierta(null)
     }
 
     const limpiarEstado = () => {
@@ -72,7 +89,8 @@ const GlobalContextProvider = ({ children }) => {
             abrirModal,
             setAbierto,
             abierto,
-            limpiarEstado
+            limpiarEstado,
+            editarPelicula,
         }}>
             {children}
         </GlobalContext.Provider>
