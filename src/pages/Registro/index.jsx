@@ -2,6 +2,9 @@ import styled from "styled-components";
 import CampoTexto from "../../components/CampoTexto";
 import Seleccion from "../../components/Seleccion";
 import Boton from "../../components/Boton";
+import { useContext } from "react";
+import { v4 as uuid } from "uuid";
+import { GlobalContext } from "../../context/GlobalContext";
 
 const PrincipalEstilizado = styled.main`
     width: 100%;
@@ -30,16 +33,29 @@ const FormularioEstilizado = styled.form`
  `
 
 const Registro = () => {
+    const {setTitulo, titulo, setImagen, imagen, setHoras, horas, setMinutos, minutos, setCategoria, categoria, agregarPelicula} = useContext(GlobalContext);
+    const duracion = `${horas}h ${minutos}min`
+    const manejarEnvio = (e) =>{
+        e.preventDefault()
+        let datosAEnviar = {
+            id : uuid(),
+            titulo,
+            imagen,
+            duracion,
+            categoria
+        }
+        agregarPelicula(datosAEnviar);
+    }
     return (
         <PrincipalEstilizado >
             <h1>NUEVO VIDEO</h1>
             <span>COMPLETE EL FORMULARIO PARA CREAR UNA NUEVA TARJETA</span>
-            <FormularioEstilizado>
-                <CampoTexto titulo={"Titulo"} placeholder={"Ingrese el titulo"} required />
-                <CampoTexto titulo={"Imagen"} placeholder={"Ingrese el url de la imagen"} tipo={"url"} required />
-                <CampoTexto titulo={"Horas de duración"} placeholder={"Ingrese la duración en horas"} tipo={"number"} required />
-                <CampoTexto titulo={"Minutos de duración"} placeholder={"Ingrese la duración en minutos"} tipo={"number"} required />
-                <Seleccion titulo={"Categoria"} />
+            <FormularioEstilizado onSubmit={manejarEnvio}>
+                <CampoTexto titulo={"Titulo"} placeholder={"Ingrese el titulo"} estado={setTitulo} required />
+                <CampoTexto titulo={"Imagen"} placeholder={"Ingrese el url de la imagen"} tipo={"url"} estado={setImagen} required />
+                <CampoTexto titulo={"Horas de duración"} placeholder={"Ingrese la duración en horas"} tipo={"number"} estado={setHoras} required />
+                <CampoTexto titulo={"Minutos de duración"} placeholder={"Ingrese la duración en minutos"} tipo={"number"} estado={setMinutos} required />
+                <Seleccion titulo={"Categoria"} estado={setCategoria}/>
                 <EspacioBotones>
                     <Boton tipo={"submit"} ></Boton>
                     <Boton tipo={"button"} texto={"Limpiar"} ></Boton>
