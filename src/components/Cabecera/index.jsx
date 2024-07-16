@@ -11,8 +11,9 @@ const HeaderEstilizado = styled.header`
     color: #D9C39A;
     box-sizing: border-box;
     font-family: "Playwrite HR Lijeva", cursive;
-    position: fixed;
+    position: sticky;
     z-index: 1;
+    top: 0;
 `
 
 const Cabecera = () => {

@@ -40,7 +40,7 @@ const Categoria = ({ peliculas, categoria, eliminarPelicula }) => {
                 </Titulo>
                 {
                     peliculas.map((pelicula) => {
-                        return <Card {...pelicula} key={pelicula.id} eliminarPelicula={eliminarPelicula}/>;
+                        return <Card {...pelicula} key={pelicula.id} eliminarPelicula={eliminarPelicula} />;
                     })
                 }
             </CategoriaEstilizada>
