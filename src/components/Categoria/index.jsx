@@ -5,22 +5,36 @@ const CategoriaEstilizada = styled.div`
     width: 100%;
     background-color: #40010D ;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px; 
     justify-content: flex-start;
     padding: 10px;
     box-sizing: border-box;
 `
 
+const ListaDePeliculas = styled.div`
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+    @media (max-width: 834px){
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+`
+
 const Titulo = styled.div`
     margin: 10px;
     width: 100%;
+    display: flex;
+    height: fit-content;
 `
 const TituloCategoria = styled.div`
     background-color: #0D0D0D;
     color: white;
     font-weight: 500;
     width: fit-content;
+    display: block;
     padding: 10px;
     border-radius: 6px;
     font-family: "Playwrite HR Lijeva", cursive;
@@ -38,11 +52,13 @@ const Categoria = ({ peliculas, categoria, eliminarPelicula, abrirModal }) => {
                         {categoria}
                     </TituloCategoria>
                 </Titulo>
-                {
-                    peliculas.map((pelicula) => {
-                        return <Card {...pelicula} key={pelicula.id} eliminarPelicula={eliminarPelicula} abrirModal={abrirModal}/>;
-                    })
-                }
+                <ListaDePeliculas>
+                    {
+                        peliculas.map((pelicula) => {
+                            return <Card {...pelicula} key={pelicula.id} eliminarPelicula={eliminarPelicula} abrirModal={abrirModal} />;
+                        })
+                    }
+                </ListaDePeliculas>
             </CategoriaEstilizada>
         </>
     )

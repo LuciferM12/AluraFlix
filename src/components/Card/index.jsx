@@ -5,10 +5,12 @@ import { IoMdTime } from "react-icons/io";
 
 const CartaEstilizada = styled.div`
     min-height: 500px;
-    width: 300px;
+    max-width: 300px;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     background-color:#0D0D0D;
+    flex-grow: 1;
     border-radius: 10px;
     color: white;
     transition: .2s ease-in;
