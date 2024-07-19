@@ -25,6 +25,9 @@ const FormularioEstilizado = styled.form`
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    @media (max-width: 1024px){
+        width: 100%;
+    }
 `
 const EspacioBotones = styled.div`
     width: 100%;

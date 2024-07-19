@@ -25,15 +25,18 @@ const FieldsetEstilizado = styled.fieldset`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    @media (max-width: 1024px) {
+        width: 90%;
+    }
 `
 
 const OptionEstilizada = styled.option`
     background-color: #0D0D0D;
 `
 
-const Seleccion = ({ titulo, estado, value ="" }) => {
+const Seleccion = ({ titulo, estado, value = "" }) => {
     const { categoriasUnicas } = useContext(GlobalContext);
-    const manejarCambio = (e) =>{
+    const manejarCambio = (e) => {
         estado(e.target.value);
     }
     return (

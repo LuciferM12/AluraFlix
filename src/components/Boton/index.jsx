@@ -18,7 +18,7 @@ const BotonEstilizado = styled.input`
 
 `
 
-const Boton = ({ tipo, texto, accion }) => {
+const Boton = ({ tipo, texto, accion, icono }) => {
     return (
 
         <BotonEstilizado type={tipo} value={texto} onClick={accion} ></BotonEstilizado>

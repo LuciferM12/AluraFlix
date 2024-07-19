@@ -23,6 +23,9 @@ const FieldsetEstilizado = styled.fieldset`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    @media (max-width: 1024px) {
+        width: 90%;
+    }
 `
 
 const CampoTexto = ({ placeholder, tipo, required, titulo, estado, value }) => {

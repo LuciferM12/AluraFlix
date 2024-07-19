@@ -9,6 +9,10 @@ const FooterEstilizado = styled.footer`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: 650px){
+        margin-bottom: 70px;
+    }
+    
 `
 
 const Footer = () => {

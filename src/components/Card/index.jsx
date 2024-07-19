@@ -14,6 +14,7 @@ const CartaEstilizada = styled.div`
     border-radius: 10px;
     color: white;
     transition: .2s ease-in;
+    z-index: 0;
     &:hover{
         transform: scale(.95);
     }

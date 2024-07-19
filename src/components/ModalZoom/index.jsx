@@ -29,15 +29,14 @@ const DialogEstilizado = styled.dialog`
     top: 294px;
     padding: 20px;
     border: 0;
-    width: 1156px;
-
+    width: 90%;
     background-color: #0D0D0D;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    
+    box-sizing: border-box;
     z-index: 3;
 `
 const FormularioAbrir = styled.form`
