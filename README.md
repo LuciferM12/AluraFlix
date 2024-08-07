@@ -1,8 +1,23 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h1 align="center">AluraFlix</h1>
+<p>Este proyecto es el resultado final del último challenge de la formación FrontEnd de ONE.</p>
+<hr>
+<h1 align="center">Tecnologías Utilizadas</h1>
+<div align="center">
+  <img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg" alt="CPP" title="C++" width="40px">
+  <img src="https://github.com/devicons/devicon/blob/master/icons/arduino/arduino-original.svg" alt="Arduino" title="Arduino" width="40px">
+</div>
+<hr>
+<h1 align="center">Detalles del Proyecto</h1>
+<p>Este proyecto consiste en guardar el recorrido de un servomotor en memoria eeprom (interna y/o externa), para después reproducirlo desde la misma. Siendo el armado físico la entrega final. </p>
+<hr>
+<h1 align="center">Características Destacadas</h1>
+<ul>
+  <li><b>Movimiento:</b> El circuito debe permitir que la posición del servomotor sea definida de acuerdo al uso de un potenciómetro.</li>
+  <li><b>Trayectoria:</b> El circuito debe almacenar la posición que tuvo el servomotor y el tiempo que duró para poder replicarlo al reproducir la grabación.</li>
+</ul>
+<hr>
+<h1 align="center">Interfaz</h1>
+<div align="center">
+  <img src="Final_OC.png" alt="Interface" title="Interface" width="600px">
+</div>
+<hr>
